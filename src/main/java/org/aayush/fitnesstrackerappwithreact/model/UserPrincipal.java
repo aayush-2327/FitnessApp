@@ -1,20 +1,18 @@
 package org.aayush.fitnesstrackerappwithreact.model;
 
 
-import org.apache.catalina.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 
 public class UserPrincipal implements UserDetails {
 
-    private final UserDataModel user;
+    private final AuthModel user;
 
-    public UserPrincipal(UserDataModel user) {
+    public UserPrincipal(AuthModel user) {
         this.user = user;
     }
 

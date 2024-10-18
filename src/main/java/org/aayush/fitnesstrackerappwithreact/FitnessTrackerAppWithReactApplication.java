@@ -2,6 +2,8 @@ package org.aayush.fitnesstrackerappwithreact;
 
 import org.aayush.fitnesstrackerappwithreact.model.AuthModel;
 import org.aayush.fitnesstrackerappwithreact.model.UserDataModel;
+import org.aayush.fitnesstrackerappwithreact.repo.UserRepo;
+import org.aayush.fitnesstrackerappwithreact.service.MyUserDetailService;
 import org.aayush.fitnesstrackerappwithreact.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -20,10 +22,10 @@ import java.util.Arrays;
 public class FitnessTrackerAppWithReactApplication implements CommandLineRunner {
 
     @Autowired
-    private final UserService service;
+    private final MyUserDetailService userDetailService;
 
-    public FitnessTrackerAppWithReactApplication(UserService service) {
-        this.service = service;
+    public FitnessTrackerAppWithReactApplication(MyUserDetailService userDetailService) {
+        this.userDetailService = userDetailService;
     }
 
     public static void main(String[] args) {
@@ -35,10 +37,5 @@ public class FitnessTrackerAppWithReactApplication implements CommandLineRunner 
 
         PasswordEncoder encoder = new BCryptPasswordEncoder();
 
-            service.addUser(new UserDataModel("1", "Aayush", "Kumar"
-            ,22, 80, 180, Arrays.asList(), new AuthModel("aayti", encoder.encode("1234"))));
-
-
-//            service.getUserById("1");
     }
 }

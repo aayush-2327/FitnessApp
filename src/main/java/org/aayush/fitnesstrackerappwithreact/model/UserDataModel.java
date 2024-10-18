@@ -11,6 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @Document("users")
 public class UserDataModel {
+
     @Id
     private String id;
     private String firstName;
@@ -19,15 +20,17 @@ public class UserDataModel {
     private double weight;
     private double height;
     private List<WorkoutDetailModel> workouts;
-    private AuthModel auth;
 
-    public String getUsername() {
-        return auth != null ? auth.getUserName() : null;
+    @Override
+    public String toString() {
+        return "UserDataModel{" +
+                "id='" + id + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", weight=" + weight +
+                ", height=" + height +
+                ", workouts=" + workouts +
+                '}';
     }
-
-
-    public String getPassword() {
-        return auth != null ? auth.getPassword() : null; // Handle null case
-    }
-
 }

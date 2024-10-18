@@ -1,7 +1,6 @@
 package org.aayush.fitnesstrackerappwithreact.service;
 
 import org.aayush.fitnesstrackerappwithreact.model.UserDataModel;
-import org.aayush.fitnesstrackerappwithreact.model.UserPrincipal;
 import org.aayush.fitnesstrackerappwithreact.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,12 +16,4 @@ public class UserService {
         repo.save(user);
     }
 
-//    public String getUserById(String id) {
-//        if(repo.findById(id).isPresent())
-//            return repo.findById(id).toString();
-//        else
-//            return "No such user found";
-//
-//        return new UserPrincipal(userDataModel);
-//    }
 }
